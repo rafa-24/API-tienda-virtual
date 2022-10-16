@@ -31,6 +31,6 @@ export class Products extends BaseEntity {
       // relacion muchos a muchos
       @ManyToMany(() => Category)
       @JoinTable()
-      categories: Category[]
+      categories: Category;
 
 }
