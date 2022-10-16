@@ -3,6 +3,7 @@ import cors from "cors";
 import morgan from "morgan";
 import { Request, Response } from "express";
 import { myDataSource } from "./db";
+import {  routerProducts} from "./routes/products.routes";
 
 // initialize express
 const app = express();
@@ -15,6 +16,8 @@ app.use(express.json());
 app.get('/api/v1', (req: Request, res: Response) => {
       res.status(200).json({ message: 'ejecutando prueba api v1' });
 });
+
+app.use(routerProducts);
 
 // funcion que arranca el servidor
 async function main() {
